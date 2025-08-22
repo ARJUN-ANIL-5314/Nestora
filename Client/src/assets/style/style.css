@@ -1,0 +1,61 @@
+.actn-icon1 {
+  font-size: 20px;
+  color: #000000ad;
+}
+.actn-icon2 {
+  /* font-size: 20px; */
+  color: #008000a3;
+}
+.actn-icon3 {
+  font-size: 20px;
+  color: #ff0000bd;
+}
+.actn-icon4 {
+  font-size: 20px;
+  color: #000000bd;
+}
+.actn-icon5 {
+  /* font-size: 20px; */
+  color: #5fabee;
+}
+
+.css-19kzrtu {
+  padding: 20px 0px 0px 0px !important;
+}
+
+.css-heg063-MuiTabs-flexContainer {
+  display: flex;
+  padding-bottom: 20px;
+  justify-content: center;
+}
+
+.css-gen84r-MuiTabs-indicator {
+  bottom: 20px !important;
+}
+.css-38x6wz-MuiInputBase-input-MuiOutlinedInput-input {
+  background: transparent !important;
+  padding: 4.5px 14px;
+}
+
+.css-81gbv2-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  background: #ffffff !important;
+  margin: 6px;
+}
+
+.css-1iu1287-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+  background: #ffffff;
+}
+.css-7r6qar-MuiInputBase-root-MuiOutlinedInput-root {
+  background: #ffffff;
+}
+.css-1cb05yl-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 15px;
+  background: #ffffff;
+}
+
+.fade-out {
+  transition: opacity 0.5s;
+  opacity: 0.5;
+}
+
+/* HOME PAGE CSS STARTING */

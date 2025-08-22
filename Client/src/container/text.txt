@@ -1,0 +1,233 @@
+saga
+
+function* login(action) {
+
+  console.log('======action======', action.payload);
+
+  try {
+    const response = yield fetch(`http://localhost:3002/user/login`, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        number: action.payload.mobileNo,
+        password: action.payload.password,
+      }),
+
+  
+
+    });
+
+    if (!response.ok) {
+      const errorResponse = yield response.json(); 
+      console.log("API Error Response:", errorResponse);
+
+      yield toast.error(errorResponse.message || 'Invalid User', { autoClose: 5000 });
+      throw new Error(errorResponse.message || "Invalid User"); 
+    }
+
+    const resJSON = yield response.json();
+    console.log('===============resJSON=====================', resJSON);
+
+    yield localStorage.setItem(process.env.REACT_APP_TOKEN, resJSON.token);
+    yield put(loginSuccess(resJSON));
+    yield put(loginUser(action.payload));
+
+  } catch (error) {
+    console.log("Caught Error:", error); 
+    yield put(loginFail(error.message));
+
+    yield toast.error(error.message, { autoClose: 3000 });
+  }
+}
+
+
+function* loginUserDetail(action) {
+
+  console.log('Action.playlodellll', action.payload);
+
+  try {
+    let params = {
+      api: `http://localhost:3002/user/profile`,
+      method: 'GET',
+      successAction: loginUserSuccess(),
+      failAction: loginUserFail('Login failed. Please try again.'),
+      authourization: 'token',
+      // authorization: 'Bearer'
+     
+    };
+
+
+    let res = yield call(auth.basicApi, params);
+    console.log("==res==", res);
+    if (
+      res &&
+      [
+        'admin',
+        'vendor',
+
+      ].includes(res.role)
+    ) {
+
+      let user = {
+        user: res
+      };user
+      console.log('======res.role==========', res.role);
+
+      yield localStorage.setItem(process.env.REACT_APP_LOGINUSER, JSON.stringify());
+
+      // Navigate to different dashboards based on user roles
+      switch (res?.role) {
+        case 'admin':
+
+          yield action.payload.navigate('/admin-dashboard');
+
+
+          break;
+        case 'vendor':
+
+          yield action.payload.navigate('/dashboard');
+
+      }
+      yield put(loginUser({ role: res.role }));
+
+      yield toast.success('Login Successfull', {
+        autoClose: 3000
+      });
+    }
+  } catch (error) {
+    if (error.status && error.message) {
+      yield toast.error(error.message, {
+        autoClose: 3000
+      });
+    }
+  }
+}
+
+
+
+
+auth.js
+import { put } from 'redux-saga/effects';
+
+import { Base64 } from 'js-base64';
+
+function* basicApi(value) {
+
+  
+  console.log("==value==",value);
+  
+  const token = yield localStorage.getItem(process.env.REACT_APP_TOKEN);
+
+  console.log(token, '====token====value=========');
+  
+  let authorization = value.authourization
+    ? value.authourization === 'Basic'
+      ? 'Basic ' + Base64.btoa(value.body.number + ':' + value.body.password)
+      : `Bearer ${token}`
+    : `Bearer ${token}`;
+
+    console.log("==authorization==",authorization);
+    
+
+  const authHeader = {
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+    Authorization: authorization
+  };
+
+  console.log("==authHeader==", authHeader);
+  
+  const noauthHeader = {
+    Accept: 'application/json',
+    'Content-Type': 'application/json'
+  };
+
+  try {
+    const responseCrud = yield fetch(`${value.api}`, {
+      method: `${value.method}`,
+      headers: value.authourization !== null ? authHeader : noauthHeader,
+      body: value.body ? value.body : null
+      // body: value.body ? JSON.stringify(value.body) : null
+    });
+console.log("==responseCrud==",responseCrud);
+
+
+    if (!responseCrud.ok) {
+      throw responseCrud;
+    } else {
+      if (responseCrud.status === 204) {
+        yield put({
+          type: `${value.successAction.type}`,
+          payload: value.payload
+        });
+        return { status: 204, msg: 'Updated Successfully' };
+      } else {
+        const responseData = yield responseCrud.json();
+        yield put({
+          type: `${value.successAction.type}`,
+          payload: responseData
+        });
+        return responseData;
+      }
+    }
+  } catch (error) {
+    console.error('error', error);
+
+    yield put({
+      type: `${value.failAction.type}`,
+      payload: error
+    });
+  }
+}
+
+export default { basicApi };
+
+
+
+
+auth.js
+const jwt = require("jsonwebtoken");
+const User = require("../userScheme");
+
+
+const userAuth = async (req, res, next) => {
+console.log("hey");
+
+  try {
+    // read the troken.
+    // const { token } = req.cookies;
+    // if (!token) {
+    //   throw new Error("token not exist")
+
+    // }
+    const authHeader = req.headers.authorization;
+
+console.log(authHeader);
+const token = authHeader.split(" ")[1];
+
+console.log("token",token);
+
+    // validate the token
+    const isAuthorized = await jwt.verify(token, "Std@project123")
+    const { id } = isAuthorized
+    if (!isAuthorized) {
+      throw new Error("UnAthorized person")
+    }
+    // find the user
+    const user = await User.findById(id)
+
+    req.user = user
+
+    next()
+
+  } catch (err) {
+    res.status(404).send("invalid user" + err)
+  }
+
+}
+
+module.exports = { userAuth }
+

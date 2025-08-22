@@ -1,0 +1,38 @@
+.mainGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .LeftIMG {
+    display: none;
+  }
+}
+
+.imglft {
+  margin-left: 130px;
+}
+
+@media only screen and (max-width: 960px) {
+  .imglft {
+    margin-left: 10px;
+  }
+}
+
+/*------- AuthFooter.js ----------*/
+
+.AuthFooterMain {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 650px) {
+  .AuthFooterMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

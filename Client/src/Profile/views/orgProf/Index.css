@@ -1,0 +1,108 @@
+.ProMainCard {
+  margin: 15px;
+}
+
+.Title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.IconTitle {
+  margin-right: 20px;
+}
+
+.TitleButton {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.MainProPhoto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.formTitle {
+  color: #898989;
+}
+
+.ProPhoto {
+  height: 130px;
+  width: 130px;
+  font-size: 4rem;
+}
+
+.Details {
+  padding: 20px;
+}
+
+.Delivery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .Title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px 8px;
+  }
+
+  .TitleButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px 8px;
+  }
+}
+
+/* ------------EDITH USER -------------- */
+
+.PhotsSet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.PhotButton {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.editPhotos {
+  height: 120px;
+  width: 120px;
+  margin-top: 20px;
+  font-size: 4rem;
+}
+
+.error {
+  color: #f54d4f;
+  font-size: 12px;
+}
+
+.PhotsSetButton {
+  margin-top: 20px;
+}
+
+.EditDetails {
+  padding: 10px;
+}
+
+.EditSave {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.EditSave Button {
+  width: 250px;
+}
+
+/* 487px */

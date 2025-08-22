@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "jsx": "react-jsx",                
+    "baseUrl": "src",               
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@/*": ["*"],
+      "assets/*": ["assets/*"],
+      "store/*": ["store/*"],
+      "routes/*": ["routes/*"],
+      "themes/*": ["themes/*"],
+      "ui-component/*": ["ui-component/*"],
+      "layout/*": ["layout/*"],
+      "utils/*": ["utils/*"],
+      "views/*": ["views/*"],
+      "module/*": ["module/*"],
+      "container/*": ["container/*"],
+      "Profile/*": ["Profile/*"],
+      "menu-items/*": ["menu-items/*"],
+      "config/*": ["config/*"]
+    }
+  },
+  "include": ["src/**/*", "database.js"],
+  "exclude": ["node_modules"]
+}

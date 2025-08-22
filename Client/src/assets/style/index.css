@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your custom class */
+.review {
+  background-image: url('https://png.pngtree.com/background/20210711/original/pngtree-real-estate-commercial-real-estate-background-banner-picture-image_1131973.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,326 @@
+saga
+
+import { takeEvery, call, put } from 'redux-saga/effects';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import auth from 'container/auth';
+import config from 'config';
+
+import {
+  loginSuccess,
+  loginFail,
+  loginUserSuccess,
+  loginUser,
+  loginUserFail
+} from './slice';
+
+function* login(action) {
+  try {
+    console.log('====== Login action payload ====', action.payload);
+
+    const response = yield fetch(`http://localhost:3002/login`, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: action.payload.email,
+        password: action.payload.password,
+      }),
+    });
+
+    console.log('Login response status:', response.status);
+
+    if (!response.ok) {
+      const errorResponse = yield response.json();
+      console.error('Error response:', errorResponse);
+      yield toast.error(errorResponse.message || 'Invalid User', { autoClose: 5000 });
+      throw new Error(errorResponse.message || 'Invalid User');
+    }
+
+    const resJSON = yield response.json();
+    console.log('Login success response:', resJSON);
+
+    // Store token
+    yield localStorage.setItem(process.env.REACT_APP_TOKEN, resJSON.token);
+
+    // Store token in redux state
+    yield put(loginSuccess(resJSON));
+
+    // Trigger user detail fetch
+    yield put(loginUser(action.payload));
+
+  } catch (error) {
+    console.error('Login error:', error);
+    yield put(loginFail(error.message));
+    yield toast.error(error.message, { autoClose: 3000 });
+  }
+}
+
+function* loginUserDetail() {
+  try {
+    console.log('Fetching user details...');
+
+    const params = {
+      api: `${config.Ip}/user-details`,
+      method: 'GET',
+      successAction: loginUserSuccess(),
+      failAction: loginUserFail('Login failed. Please try again.'),
+      authourization: 'token'
+    };
+
+    console.log('Calling API with params:', params);
+
+    const res = yield call(auth.basicApi, params);
+    console.log('User details response:', res);
+
+    if (res && ['admin', 'vendor'].includes(res.role)) {
+      // ✅ Save user directly (flat structure)
+      yield localStorage.setItem('user', JSON.stringify(res));
+
+      // Save role in Redux state
+      yield put(loginUserSuccess({ role: res.role }));
+
+      yield toast.success('Login Successful', { autoClose: 3000 });
+    } else {
+      console.error('Unauthorized role:', res.role);
+      yield put(loginUserFail('Unauthorized role'));
+    }
+
+  } catch (error) {
+    console.error('User details fetch error:', error);
+    yield toast.error(error.message || 'Error during login', { autoClose: 3000 });
+    yield put(loginUserFail(error.message));
+  }
+}
+
+export default function* LoginActionWatcher() {
+  yield takeEvery('login/userLogin', login);
+  yield takeEvery('login/loginUser', loginUserDetail);
+}
+
+
+slice
+import { createSlice } from '@reduxjs/toolkit';
+
+const loginSlice = createSlice({
+  name: 'login',
+  initialState: {
+    userData: {},
+    data: {},
+    user: {},
+    userDatas: {},
+    datas: {},
+    changePass: {},
+    loading: false,
+    error: null,
+    role: null // ✅ Add role to track user role for navigation
+  },
+  reducers: {
+    userLogin: (state) => {
+      state.loading = true;
+      state.error = null;
+    },
+    loginSuccess: (state, action) => {
+      state.loading = false;
+      state.data = action.payload;
+    },
+    loginFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+    loginUser: (state) => {
+      state.loading = true;
+      state.error = null;
+    },
+    loginUserSuccess: (state, action) => {
+      state.loading = false;
+      state.user = action.payload;
+      state.role = action.payload?.role || null; // ✅ Store role from user payload
+    },
+    loginUserFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    }
+  }
+});
+
+export const {
+  userLogin,
+  loginSuccess,
+  loginFail,
+  loginUser,
+  loginUserSuccess,
+  loginUserFail
+} = loginSlice.actions;
+
+export const selectError = (state) => state.login.error;
+export const selectRole = (state) => state.login.role; // ✅ Add role selector
+
+export default loginSlice.reducer;
+
+
+
+auth login
+
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, Link } from 'react-router-dom';
+import {
+  Box,
+  Button,
+  FormControl,
+  FormHelperText,
+  IconButton,
+  InputAdornment,
+  OutlinedInput,
+  Stack,
+  Typography
+} from '@mui/material';
+import * as Yup from 'yup';
+import { Formik } from 'formik';
+import AnimateButton from 'ui-component/extended/AnimateButton';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { userLogin } from '../../../../container/LoginContainer/slice';
+
+const FirebaseLogin = ({ ...others }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [showPassword, setShowPassword] = useState(false);
+  const handleClickShowPassword = () => setShowPassword(!showPassword);
+  const handleMouseDownPassword = (event) => event.preventDefault();
+
+  // ✅ Get user role from Redux
+  const role = useSelector((state) => state.login?.role);
+
+  // ✅ Navigate based on role - Prevent navigation loop
+  useEffect(() => {
+    console.log('Effect fired. Current role:', role);
+    console.log('Current path:', window.location.pathname);
+  
+    // if (!role) {
+    //   console.log('Role is null — skipping navigation');
+    //   return;
+    // }
+  
+    if (role === 'admin' && window.location.pathname !== '/admin-dashboard') {
+      console.log('Navigating to admin-dashboard');
+      navigate('/admin-dashboard');
+    } else if (role === 'vendor' && window.location.pathname !== '/dashboard') {
+      console.log('Navigating to vendor dashboard');
+      navigate('/dashboard');
+    }
+  }, [role, navigate]);
+  
+
+  return (
+    <Formik
+      initialValues={{
+        email: '',
+        password: ''
+      }}
+      validationSchema={Yup.object().shape({
+        email: Yup.string().email('Must be a valid email address').required('Email is required'),
+        password: Yup.string().required('Password is required')
+      })}
+      onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
+        try {
+          setStatus({ success: true });
+          setSubmitting(true); // Mark as submitting
+
+          // ✅ Dispatch login action
+          dispatch(userLogin(values));
+        } catch (err) {
+          console.error(err);
+          setStatus({ success: false });
+          setErrors({ submit: err.message });
+          setSubmitting(false); // Reset submitting flag
+        }
+      }}
+    >
+      {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (
+        <form noValidate onSubmit={handleSubmit} {...others}>
+          <FormControl fullWidth error={Boolean(touched.email && errors.email)}>
+            <Box sx={{ mb: 1 }}>
+              <Typography variant="body1">Email</Typography>
+            </Box>
+            <OutlinedInput
+              style={{ padding: '4px' }}
+              value={values.email}
+              name="email"
+              onBlur={handleBlur}
+              onChange={handleChange}
+            />
+            {touched.email && errors.email && <FormHelperText error>{errors.email}</FormHelperText>}
+          </FormControl>
+
+          <FormControl fullWidth error={Boolean(touched.password && errors.password)}>
+            <Box sx={{ mb: 1, mt: 3 }}>
+              <Typography variant="body1">Password</Typography>
+            </Box>
+            <OutlinedInput
+              style={{ padding: '4px' }}
+              type={showPassword ? 'text' : 'password'}
+              value={values.password}
+              name="password"
+              onBlur={handleBlur}
+              onChange={handleChange}
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                  >
+                    {showPassword ? <Visibility /> : <VisibilityOff />}
+                  </IconButton>
+                </InputAdornment>
+              }
+            />
+            {touched.password && errors.password && <FormHelperText error>{errors.password}</FormHelperText>}
+          </FormControl>
+
+          <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={1}>
+            <Typography
+              variant="subtitle1"
+              color="secondary"
+              component={Link}
+              to="/forgot-password"
+              style={{ marginTop: '20px', fontWeight: 'bold' }}
+              sx={{ textDecoration: 'none', cursor: 'pointer' }}
+            >
+              Forgot Password?
+            </Typography>
+          </Stack>
+
+          {errors.submit && (
+            <Box sx={{ mt: 3 }}>
+              <FormHelperText error>{errors.submit}</FormHelperText>
+            </Box>
+          )}
+
+          <Box sx={{ mt: 2 }}>
+            <AnimateButton>
+              <Button
+                disableElevation
+                disabled={isSubmitting} // Disable button during submission
+                fullWidth
+                size="large"
+                type="submit"
+                variant="contained"
+                className="!impotant bg-dark-b hover:bg-blue-400 hover:text-dark-b"
+              >
+                Login
+              </Button>
+            </AnimateButton>
+          </Box>
+        </form>
+      )}
+    </Formik>
+  );
+};
+
+export default FirebaseLogin;
