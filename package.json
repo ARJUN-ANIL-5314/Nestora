@@ -3,11 +3,11 @@
   "version": "3.3.2",
   "private": true,
   "scripts": {
-    "start": "node server/server.js",
-    "Server": "nodemon server/server.js",
-    "client": "npm start --prefix client",
+    "start": "node Server/server.js",
+    "server": "nodemon Server/server.js",
+    "client": "npm start --prefix Client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "npm run build --prefix client"
+    "build": "npm run build --prefix Client"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",
@@ -27,3 +27,4 @@
     "nodemon": "^3.1.9"
   }
 }
+
