@@ -3,12 +3,13 @@
   "version": "3.3.2",
   "private": true,
   "scripts": {
-    "start": "node Server/server.js",
-    "server": "nodemon Server/server.js",
-    "client": "npm start --prefix Client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "npm run build --prefix Client"
-  },
+  "start": "node Server/server.js",
+  "server": "nodemon Server/server.js",
+  "client": "npm start --prefix Client",
+  "dev": "concurrently \"npm run server\" \"npm run client\"",
+  "build": "npm run build --prefix Client",
+  "postinstall": "npm install --prefix Server && npm install --prefix Client"
+},
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "cookie-parser": "^1.4.7",
