@@ -13,6 +13,6 @@ const PropertySchema = new mongoose.Schema({
   }
 });
 
-const Property = mongoose.model('Property', PropertySchema);
+const Property = mongoose.model('Property', PropertySchema,'category');
 
 module.exports = Property;
