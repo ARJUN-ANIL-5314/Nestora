@@ -7,24 +7,21 @@ require('dotenv').config();
 require('./database');
 
 const app = express();
+
+const PORT = process.env.PORT || 3002; // Use Render's port if available
+
 app.use(cors({
   origin: "http://localhost:3000", 
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"] // Allow necessary headers
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
-
-const port = 3002
-
-console.log(port);
-
 
 app.use(express.json());
 app.use(cookieParser());
 
 app.use(routers);
 
-
-app.listen(port, () => {
-  console.log(`server running on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
