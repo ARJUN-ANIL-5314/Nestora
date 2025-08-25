@@ -27,8 +27,8 @@ Thumbs.db
 
 # Optional: package lock (if you use yarn or want to ignore)
 # package-lock.json
-# yarn.lock
-yarn.lock
+ yarn.lock
+
 
 # Optional: test coverage
 coverage/
