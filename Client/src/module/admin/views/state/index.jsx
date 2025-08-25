@@ -13,7 +13,9 @@ import ViewModal from './viewModal.jsx';
 import '../../../../assets/style/style.css';
 import { getState, deleteState } from 'module/admin/container/stateContainer/slice';
 import { capitalizeFirstLetter } from 'module/licensee/views/utilities/Capitallised.js';
-import NoDataComponent from 'module/utlities/NoDataComponent.js';
+
+// Corrected the folder name from 'utlities' to 'utilities'
+import NoDataComponent from 'module/utilities/NoDataComponent.js';
 
 export default function Index() {
   const [openModal, setOpenModal] = useState(false);
@@ -28,7 +30,6 @@ export default function Index() {
   const modalStyle = { width: '60%' };
   const dispatch = useDispatch();
   const stateDetails = useSelector((state) => state.adminReducer.state.stateData);
-  // const stateCount = useSelector((state) => state.adminReducer.state.stateData.count);
 
   useEffect(() => {
     dispatch(getState({}));
@@ -95,8 +96,6 @@ export default function Index() {
     setFilteredData(filteredData);
     setCount(filteredData.length);
   };
-
-  // const dataToDisplay = filteredData.length > 0 ? filteredData : stateDetails.rows;
 
   const columns = [
     {
