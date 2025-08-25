@@ -1,20 +1,20 @@
 import DataTable from 'react-data-table-component';
 import React, { useState, useEffect } from 'react';
 import OpenModal from 'ui-component/common/OpenModal';
-import SpecificationAdd from './SpecificationAdd.js';
+import SpecificationAdd from './SpecificationAdd.jsx';
 import CardHead from 'ui-component/common/CardHead';
 import { useDispatch, useSelector } from 'react-redux';
 import '../../../../assets/style/style.css';
-import { capitalizeFirstLetter } from '../utilities/Capitallised';
-import ViewModal from './ViewModal.js';
+import { capitalizeFirstLetter } from '../utilities/Capitallised.jsx';
+import ViewModal from './ViewModal.jsx';
 import { IconButton } from '@mui/material';
 import { Visibility, Delete } from '@mui/icons-material';
 import EditNoteIcon from '@mui/icons-material/EditNote';
-import { getSpecification, deleteSpecification } from 'module/licensee/container/specificationContainer/slice.js';
+import { getSpecification, deleteSpecification } from 'module/licensee/container/specificationContainer/slice.jsx';
 import { tableCustomStyles } from '../tableStyle.jsx';
-import NoDataComponent from './NoDataComponent.js';
+import NoDataComponent from './NoDataComponent.jsx';
 import { useNavigate } from 'react-router-dom';
-import DeleteModal from 'ui-component/Modals/DeleteModal';
+import DeleteModal from 'ui-component/Modals/DeleteModal.jsx';
 
 export default function Index() {
   const navigate = useNavigate();
@@ -26,7 +26,6 @@ export default function Index() {
   const [openModal, setOpenModal] = useState(false);
   const [modalComponent, setModalComponent] = useState(null);
   const [modalHeading, setModalHeading] = useState('');
-  // const navigate = useNavigate();
 
   const modalStyle = { width: '60%' };
   const dispatch = useDispatch();
@@ -38,7 +37,6 @@ export default function Index() {
     dispatch(getSpecification());
     setTableHeading('Specification');
     setSpecificationAdd(true);
-    // setCount(Number());
   }, [dispatch]);
 
   const handleOpenModal = (whichOpen, item) => {
@@ -69,11 +67,7 @@ export default function Index() {
 
     const filteredData = specificationDetails.rows.filter((row) => {
       console.log('==row', row);
-
       return row.subCatgName.toLowerCase().includes(searchValue);
-      // row.email.toLowerCase().includes(searchValue) ||
-      // row.lName.toLowerCase().includes(searchValue) ||
-      // row.contactMobile1.toLowerCase().includes(searchValue)
     });
     setFilteredData(filteredData);
   };
@@ -133,7 +127,6 @@ export default function Index() {
         return <div>{lblTexts.join(', ')}</div>;
       }
     },
-
     {
       name: 'ACTIONS',
       cell: (row) => (
@@ -144,7 +137,6 @@ export default function Index() {
           <IconButton onClick={() => handleEditPage(row)}>
             <EditNoteIcon className="actn-icon2" />
           </IconButton>
-
           <IconButton onClick={() => handleDeleteModal(row)}>
             <Delete className="actn-icon3" />
           </IconButton>
