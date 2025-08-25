@@ -14,14 +14,9 @@ import { tableCustomStyles } from '../tableStyle.jsx';
 import NoDataComponent from './NoDataComponent.jsx';
 import { Box } from '@mui/system';
 
-import DeleteModal from 'ui-component/Modals/DeleteModal.jsx';
-import { capitalizeFirstLetter } from '../utilities/Capitallised.jsx';
-import ViewModal from './viewModal.jsx';
-
 import DeleteModal from 'ui-component/Modals/DeleteModal';
 import { capitalizeFirstLetter } from '../utilities/Capitallised.js';
 import ViewModal from './viewModal.jsx';
- ff0e4d8 (fix: adjusted import extensions and updated file references for Vite compatibility)
 
 const Index = () => {
   const [rateCardAdd, setrateCardAdd] = useState(false);
@@ -192,4 +187,5 @@ const Index = () => {
     </div>
   );
 };
+
 export default Index;
