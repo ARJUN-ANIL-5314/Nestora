@@ -15,7 +15,7 @@ import NoDataComponent from './NoDataComponent.js';
 import { Box } from '@mui/system';
 import DeleteModal from 'ui-component/Modals/DeleteModal';
 import { capitalizeFirstLetter } from '../utilities/Capitallised.js';
-import ViewModal from './viewModal.js';
+import ViewModal from './ViewModal.js';
 
 const Index = () => {
   const [rateCardAdd, setrateCardAdd] = useState(false);

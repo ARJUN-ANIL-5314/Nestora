@@ -1,12 +1,12 @@
 import DataTable from 'react-data-table-component';
 import React, { useState, useEffect } from 'react';
 import OpenModal from 'ui-component/common/OpenModal';
-import SpecificationAdd from './specificationAdd.js';
+import SpecificationAdd from './SpecificationAdd.js';
 import CardHead from 'ui-component/common/CardHead';
 import { useDispatch, useSelector } from 'react-redux';
 import '../../../../assets/style/style.css';
 import { capitalizeFirstLetter } from '../utilities/Capitallised';
-import ViewModal from './viewModal.js';
+import ViewModal from './ViewModal.js';
 import { IconButton } from '@mui/material';
 import { Visibility, Delete } from '@mui/icons-material';
 import EditNoteIcon from '@mui/icons-material/EditNote';
