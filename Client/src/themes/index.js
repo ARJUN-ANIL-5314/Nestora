@@ -6,9 +6,9 @@ import colors from 'assets/scss/_themes-vars.module.scss';
 
 
 // project imports
-import componentStyleOverrides from './compStyleOverride';
-import themePalette from './palette';
-import themeTypography from './typography';
+import componentStyleOverrides from './compStyleOverride.js';
+import themePalette from './palette.js';
+import themeTypography from './typography.js';
 
 /**
  * Represent theme style and structure as per Material-UI

@@ -6,10 +6,10 @@ import EditNoteIcon from '@mui/icons-material/EditNote';
 import { useDispatch, useSelector } from 'react-redux';
 import { tableCustomStyles } from '../tableStyle.jsx';
 import OpenModal from 'ui-component/common/OpenModal';
-import AddEditModal from './addEditModal';
+import AddEditModal from './addEditModal.jsx';
 import CardHead from 'ui-component/common/CardHead';
 import DeleteModal from 'ui-component/Modals/DeleteModal';
-import ViewModal from './viewModal';
+import ViewModal from './viewModal.jsx';
 import '../../../../assets/style/style.css';
 
 import { getEnqMode, deleteEnqMode } from 'module/admin/container/enqModeContainer/slice';

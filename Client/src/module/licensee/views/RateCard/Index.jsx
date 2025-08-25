@@ -13,9 +13,15 @@ import { getRateCard, deleteRateCard } from 'module/licensee/container/RateCardC
 import { tableCustomStyles } from '../tableStyle.jsx';
 import NoDataComponent from './NoDataComponent.jsx';
 import { Box } from '@mui/system';
+<<<<<<< HEAD
 import DeleteModal from 'ui-component/Modals/DeleteModal.jsx';
 import { capitalizeFirstLetter } from '../utilities/Capitallised.jsx';
 import ViewModal from './ViewModal.jsx';
+=======
+import DeleteModal from 'ui-component/Modals/DeleteModal';
+import { capitalizeFirstLetter } from '../utilities/Capitallised.js';
+import ViewModal from './viewModal.jsx';
+>>>>>>> ff0e4d8 (fix: adjusted import extensions and updated file references for Vite compatibility)
 
 const Index = () => {
   const [rateCardAdd, setrateCardAdd] = useState(false);

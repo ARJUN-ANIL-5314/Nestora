@@ -1,7 +1,7 @@
 import { put, call, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 import config from 'config';
-import * as actionType from './slice';
+import * as actionType from './slice.js';
 
 const getToken = () => localStorage.getItem('Token');
 

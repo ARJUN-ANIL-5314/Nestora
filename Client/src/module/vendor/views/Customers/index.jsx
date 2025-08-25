@@ -7,10 +7,10 @@ import { Visibility, Delete, ShoppingCart, FilterList, ExpandLess } from '@mui/i
 import EditNoteIcon from '@mui/icons-material/EditNote';
 
 import OpenModal from 'ui-component/common/OpenModal';
-import AddEditModal from './addEditModal';
+import AddEditModal from './addEditModal.jsx';
 import CardHead from 'ui-component/common/CardHead';
 import DeleteModal from 'ui-component/Modals/DeleteModal';
-import ViewModal from './viewModal';
+import ViewModal from './viewModal.jsx';
 import { capitalize } from '../utilities/Capitallised';
 import { getCustomer, deleteCustomer } from 'module/vendor/container/customerContainer/slice';
 import { tableCustomStyles } from '../tableStyle.jsx';

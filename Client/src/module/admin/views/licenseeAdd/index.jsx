@@ -4,10 +4,10 @@ import { Visibility, Delete, PersonOff, FilterList, ExpandLess } from '@mui/icon
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import DataTable from 'react-data-table-component';
 import OpenModal from 'ui-component/common/OpenModal';
-import AddEditModal from './addEditModal';
+import AddEditModal from './addEditModal.jsx';
 import DeleteModal from 'ui-component/Modals/DeleteModal';
 import SuspendModal from 'ui-component/Modals/SuspendModal';
-import ViewModal from './viewModal';
+import ViewModal from './viewModal.jsx';
 import CardHead from 'ui-component/common/CardHead';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserCreatedBy, deleteUser, changeStatus } from 'module/vendor/container/userContainer/slice';

@@ -2,7 +2,7 @@
 // // import { Box, useMediaQuery } from '@mui/system';
 // import React from 'react';
 // import CloseIcon from '@mui/icons-material/Close';
-// import styles from './style';
+// import styles from './style.js';
 // import { useTheme } from '@mui/material/styles';
 // import { Formik, Form, ErrorMessage } from 'formik';
 // // import MenuItem from '@mui/material/MenuItem';
@@ -18,10 +18,10 @@
 // import MainCard from 'ui-component/cards/MainCard';
 // import PersonIcon from '@mui/icons-material/Person';
 // import ReceiptIcon from '@mui/icons-material/Receipt';
-// import CustomerModal from './customerModal';
+// import CustomerModal from './customerModal.jsx';
 // import formatLabel from 'utils/formatLabel';
 // import { useNavigate } from 'react-router-dom';
-// import OrderModal from './OrderDetails';
+// import OrderModal from './OrderDetails.jsx';
 // import { addPayments } from 'module/vendor/container/paymentContainer/slice';
 // import { getInvoice } from 'module/vendor/container/invoiceContainer/slice';
 
@@ -437,7 +437,7 @@ import { Button, Grid, MenuItem, Select, Typography, Box, useMediaQuery } from '
 // import { Box, useMediaQuery } from '@mui/system';
 import React from 'react';
 import CloseIcon from '@mui/icons-material/Close';
-import styles from './style';
+import styles from './style.js';
 import { useTheme } from '@mui/material/styles';
 import { Formik, Form, ErrorMessage } from 'formik';
 // import MenuItem from '@mui/material/MenuItem';
@@ -453,10 +453,10 @@ import { useEffect, useState } from 'react';
 import MainCard from 'ui-component/cards/MainCard';
 import PersonIcon from '@mui/icons-material/Person';
 import ReceiptIcon from '@mui/icons-material/Receipt';
-import CustomerModal from './customerModal';
+import CustomerModal from './customerModal.jsx';
 import formatLabel from 'utils/formatLabel';
 import { useNavigate } from 'react-router-dom';
-import OrderModal from './OrderDetails';
+import OrderModal from './OrderDetails.jsx';
 import { addPayments } from 'module/vendor/container/paymentContainer/slice';
 
 const PaymentAddPage = () => {

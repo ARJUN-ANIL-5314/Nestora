@@ -6,7 +6,7 @@ import SkeletonPopularCard from 'ui-component/cards/Skeleton/PopularCard';
 import { gridSpacing } from 'store/constant';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCustomer } from 'module/vendor/container/customerContainer/slice';
-import TotalIncomeDarkCard from './TotalIncomeDarkCard';
+import TotalIncomeDarkCard from './TotalIncomeDarkCard.jsx';
 
 const getStatusCounts = (userData) => {
   return {

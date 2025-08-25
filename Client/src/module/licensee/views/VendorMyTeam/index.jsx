@@ -3,7 +3,7 @@ import { IconButton, MenuItem, Select, FormControl, Tooltip, Grid, Autocomplete,
 import { Visibility, FilterList, ExpandLess } from '@mui/icons-material';
 import DataTable from 'react-data-table-component';
 import OpenModal from 'ui-component/common/OpenModal';
-import ViewModal from './viewModal';
+import ViewModal from './viewModal.jsx';
 import CardHead from 'ui-component/common/CardHead';
 import { useDispatch, useSelector } from 'react-redux';
 import { getLicenseeTeam } from 'module/vendor/container/userContainer/slice';

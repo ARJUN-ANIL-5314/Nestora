@@ -16,7 +16,7 @@ import { tableCustomStyles } from '../tableStyle.jsx';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { capitalizeFirstLetter } from 'module/utlities/Capitallised';
 import NoDataComponent from '../NoDataComponent';
-import MyDocument from './invoicePDF';
+import MyDocument from './invoicePDF.jsx';
 
 export default function Index() {
   // const navigate = useNavigate();

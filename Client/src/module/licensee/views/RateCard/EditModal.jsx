@@ -1,7 +1,7 @@
 import { Button, FormLabel, Grid, InputAdornment } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
-import styles from './style';
+import styles from './style.js';
 import TextField from 'ui-component/common/TextField';
 import { useTheme } from '@mui/material/styles';
 import { useEffect } from 'react';

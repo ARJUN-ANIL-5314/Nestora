@@ -3,7 +3,7 @@ import { Drawer, Box, Grid } from '@mui/material';
 import PropTypes from 'prop-types';
 import CloseIcon from '@mui/icons-material/Close';
 import { useTheme } from '@mui/material/styles';
-import styles from './style';
+import styles from './style.js';
 
 const OpenDrawer = ({ open, handleClose, component, mdlHeading }) => {
   const theme = useTheme();

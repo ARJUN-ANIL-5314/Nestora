@@ -8,7 +8,7 @@ import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
 import FilterAltSharpIcon from '@mui/icons-material/FilterAltSharp';
-import styles from './style';
+import styles from './style.js';
 
 const CardHead = ({
   tableHeading,

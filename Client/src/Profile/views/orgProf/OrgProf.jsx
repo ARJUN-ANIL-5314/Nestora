@@ -7,7 +7,7 @@ import { styled } from '@mui/material';
 import './Index.css';
 import OpenDrawer from 'ui-component/common/OpenDrawer';
 import { userLogin } from 'container/LoginContainer/slice';
-import OrgProfEdit from './OrgProfEdit';
+import OrgProfEdit from './OrgProfEdit.jsx';
 // import { getOrgProfId } from 'Profile/container/orgprofContainer/slice';
 import { IconLicense, IconLocation, IconUser, IconUsers } from '@tabler/icons';
 import { capitalize } from 'utils/Capitalised';

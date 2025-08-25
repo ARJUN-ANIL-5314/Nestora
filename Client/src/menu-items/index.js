@@ -1,7 +1,7 @@
-import adminMenu from './dashboard';
-import licenseeMenu from './licensee';
-import vendorMenu from './vendor';
-import customerMenu from './customer';
+import adminMenu from './dashboard.js';
+import licenseeMenu from './licensee.js';
+import vendorMenu from './vendor.js';
+import customerMenu from './customer.js';
 
 // ==============================|| MENU ITEMS ||============================== //
 

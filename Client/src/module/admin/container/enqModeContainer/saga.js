@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import config from 'config';
 import auth from 'container/auth';
 
-import * as actionType from './slice';
+import * as actionType from './slice.js';
 
 function* fetchEnqmode() {
   try {

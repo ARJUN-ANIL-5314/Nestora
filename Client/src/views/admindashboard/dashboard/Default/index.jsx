@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { Grid } from '@mui/material';
-import LicenseeCard from './LicenseeCard';
-import MyTeamCard from './MyTeamCard';
-import Teams from './Teams';
-import TeamsCards from './TeamsCards';
-import MyTeam from './MyTeam';
-import Support from './Support';
-import Licensee from './Licensee';
+import LicenseeCard from './LicenseeCard.jsx';
+import MyTeamCard from './MyTeamCard.jsx';
+import Teams from './Teams.jsx';
+import TeamsCards from './TeamsCards.jsx';
+import MyTeam from './MyTeam.jsx';
+import Support from './Support.jsx';
+import Licensee from './Licensee.jsx';
 
 import { gridSpacing } from 'store/constant';
-// import SupportCard from './SupportCard';
-//import Support from './Support';
-import SupportAction from './SupportCard';
-import InternalSupport from './InternalSupport';
-import InternalSupportAction from './InternalSupportCard';
+// import SupportCard from './SupportCard.jsx';
+//import Support from './Support.jsx';
+import SupportAction from './SupportCard.jsx';
+import InternalSupport from './InternalSupport.jsx';
+import InternalSupportAction from './InternalSupportCard.jsx';
 
 // ==============================|| DEFAULT DASHBOARD ||============================== //
 

@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import CloseIcon from '@mui/icons-material/Close';
 import Grid from '@mui/material/Grid';
 import { useTheme } from '@mui/material/styles';
-import styles from './style';
-import { useMdlWidth } from './getMdlWidth';
+import styles from './style.js';
+import { useMdlWidth } from './getMdlWidth.js';
 
 const OpenModal = ({ open, handleClose, component, mdlHeading }) => {
   const theme = useTheme();

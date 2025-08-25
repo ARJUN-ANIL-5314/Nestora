@@ -8,7 +8,7 @@ import SkeletonPopularCard from 'ui-component/cards/Skeleton/PopularCard';
 import { gridSpacing } from 'store/constant';
 // import { Link } from 'react-router-dom';
 import { getUserCreatedBy } from 'module/vendor/container/userContainer/slice';
-import MyteamDarkCard from './MyteamDarkCard';
+import MyteamDarkCard from './MyteamDarkCard.jsx';
 
 const getStatusCounts = (userRoles, userData) => {
   let filteredData = [];

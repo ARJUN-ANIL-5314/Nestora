@@ -3,7 +3,7 @@ import config from 'config';
 import auth from 'container/auth';
 import 'react-toastify/dist/ReactToastify.css';
 
-import * as actionType from './slice';
+import * as actionType from './slice.js';
 import { toast } from 'react-toastify';
 
 function* fetchDistrict() {

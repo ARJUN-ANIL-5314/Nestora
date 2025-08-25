@@ -2,7 +2,7 @@ import { takeEvery, call } from 'redux-saga/effects';
 import 'react-toastify/dist/ReactToastify.css';
 import config from 'config';
 import auth from 'container/auth';
-import * as actionType from './slice';
+import * as actionType from './slice.js';
 import { toast } from 'react-toastify';
 
 function* addInvoice(action) {

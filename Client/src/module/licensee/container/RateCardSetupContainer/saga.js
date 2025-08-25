@@ -5,7 +5,7 @@ import { call, takeEvery } from 'redux-saga/effects';
 import config from 'config';
 import auth from 'container/auth';
 
-import * as actionType from './slice';
+import * as actionType from './slice.js';
 
 function* addRateCardSetup(action) {
   // alert("saga")

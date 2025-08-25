@@ -4,7 +4,7 @@
 // import { Box } from '@mui/system';
 // import React from 'react';
 // import MainCard from 'ui-component/cards/MainCard';
-// import styles from './style';
+// import styles from './style.js';
 // import { useTheme } from '@mui/material/styles';
 // import CloseIcon from '@mui/icons-material/Close';
 // import { useNavigate } from 'react-router-dom';
@@ -463,7 +463,7 @@ import { Box } from '@mui/system';
 import React from 'react';
 import { Tabs, Tab } from '@mui/material';
 import MainCard from 'ui-component/cards/MainCard';
-import styles from './style';
+import styles from './style.js';
 import '../../../../assets/style/style.css';
 import { useTheme } from '@mui/material/styles';
 import * as Yup from 'yup';

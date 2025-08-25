@@ -1,12 +1,12 @@
 import DataTable from 'react-data-table-component';
 import React, { useState, useEffect } from 'react';
 import OpenModal from 'ui-component/common/OpenModal';
-import AddEditModal from './addEditModal';
+import AddEditModal from './addEditModal.jsx';
 import CardHead from 'ui-component/common/CardHead';
 import { useDispatch, useSelector } from 'react-redux';
 import DeleteModal from 'ui-component/Modals/DeleteModal';
 import '../../../../assets/style/style.css';
-import ViewModal from './viewModal';
+import ViewModal from './viewModal.jsx';
 import { IconButton } from '@mui/material';
 import { tableCustomStyles } from '../tableStyle.jsx';
 import { Visibility, Delete } from '@mui/icons-material';

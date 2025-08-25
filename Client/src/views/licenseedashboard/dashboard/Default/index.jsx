@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Grid } from '@mui/material';
-import MyTeamCard from './MyTeamCard';
-import MyTeam from './MyTeam';
-import Support from './Support';
+import MyTeamCard from './MyTeamCard.jsx';
+import MyTeam from './MyTeam.jsx';
+import Support from './Support.jsx';
 import { gridSpacing } from 'store/constant';
-import Vendors from './Vendors';
-import SupportCard from './SupportCard';
-import VendorsCard from './VendorsCard';
-import InternalSupport from './InternalSupport';
-import InternalSupportAction from './InternalSupportCard';
+import Vendors from './Vendors.jsx';
+import SupportCard from './SupportCard.jsx';
+import VendorsCard from './VendorsCard.jsx';
+import InternalSupport from './InternalSupport.jsx';
+import InternalSupportAction from './InternalSupportCard.jsx';
 
 // ==============================|| DEFAULT DASHBOARD ||============================== //
 

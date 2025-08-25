@@ -1,10 +1,10 @@
-import Novbar from './Novbar';
-import Banner from './Banner';
-import Service from './Service';
-import About from './About';
-import Category from './Category';
-import Testimonials  from './Testimonials';
-import Footer from './Footer';
+import Novbar from './Novbar.jsx';
+import Banner from './Banner.jsx';
+import Service from './Service.jsx';
+import About from './About.jsx';
+import Category from './Category.jsx';
+import Testimonials  from './Testimonials.jsx';
+import Footer from './Footer.jsx';
 
 export default function HomePage() {
   return (

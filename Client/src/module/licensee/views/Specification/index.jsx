@@ -5,7 +5,11 @@ import SpecificationAdd from './SpecificationAdd.jsx';
 import CardHead from 'ui-component/common/CardHead';
 import { useDispatch, useSelector } from 'react-redux';
 import '../../../../assets/style/style.css';
+<<<<<<< HEAD
 import { capitalizeFirstLetter } from '../utilities/Capitallised.jsx';
+=======
+import { capitalizeFirstLetter } from '../utilities/Capitallised';
+>>>>>>> ff0e4d8 (fix: adjusted import extensions and updated file references for Vite compatibility)
 import ViewModal from './ViewModal.jsx';
 import { IconButton } from '@mui/material';
 import { Visibility, Delete } from '@mui/icons-material';

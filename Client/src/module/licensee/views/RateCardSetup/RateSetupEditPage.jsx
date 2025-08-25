@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Box } from '@mui/system';
-import styles from './style';
+import styles from './style.js';
 import '../../../../assets/style/style.css';
 import { getMainCategory } from 'module/licensee/container/mainCategoryContainer/slice';
 import { useTheme } from '@mui/material/styles';

@@ -5,7 +5,7 @@
 // import CloseIcon from '@mui/icons-material/Close';
 // import Grid from '@mui/material/Grid';
 // import { useTheme } from '@mui/material/styles';
-// import styles from './style';
+// import styles from './style.js';
 
 // const OpenModal = ({ open, handleClose, component,  mdlHeading, mdlwidth }) => {
 //   const theme = useTheme();

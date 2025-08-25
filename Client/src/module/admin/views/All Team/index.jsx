@@ -3,8 +3,8 @@ import { IconButton, Modal, Box, Tooltip } from '@mui/material';
 import { Visibility, PersonOff, FilterList, Close } from '@mui/icons-material';
 import DataTable from 'react-data-table-component';
 import OpenModal from 'ui-component/common/OpenModal';
-import AddEditModal from './addEditModal';
-import ViewModal from './viewModal';
+import AddEditModal from './addEditModal.jsx';
+import ViewModal from './viewModal.jsx';
 import CardHead from 'ui-component/common/CardHead';
 import SuspendModal from 'ui-component/Modals/SuspendModal';
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,7 +13,7 @@ import { tableCustomStyles } from '../tableStyle';
 import '../../../../assets/style/style.css';
 import { roleMapping } from 'module/utlities/user_name';
 import NoDataComponent from 'module/utlities/NoDataComponent';
-import FilterModalComponent from './FilterModalComponent';
+import FilterModalComponent from './FilterModalComponent.jsx';
 import { capitalize } from 'utils/Capitalised';
 
 export default function Index() {

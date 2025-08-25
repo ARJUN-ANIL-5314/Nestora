@@ -1,5 +1,5 @@
-import reducer from './reducer';
-import saga from './saga';
+import reducer from './reducer.js';
+import saga from './saga.js';
 import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 import logger from 'redux-logger';

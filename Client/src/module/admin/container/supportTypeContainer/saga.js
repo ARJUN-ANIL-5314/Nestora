@@ -3,7 +3,7 @@ import { put, call, takeEvery } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
 import config from 'config';
 import auth from 'container/auth';
-import * as actionType from './slice';
+import * as actionType from './slice.js';
 
 // Fetch support types
 function* fetchSupportType() {

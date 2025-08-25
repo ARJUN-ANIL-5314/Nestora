@@ -1,7 +1,7 @@
 import DataTable from 'react-data-table-component';
 import React, { useState, useEffect } from 'react';
 import OpenModal from 'ui-component/common/OpenModal';
-import AddEditModal from './addEditModal';
+import AddEditModal from './addEditModal.jsx';
 import { IconButton, Select, MenuItem, FormControl, Tooltip } from '@mui/material';
 import { Visibility, Delete } from '@mui/icons-material';
 import EditNoteIcon from '@mui/icons-material/EditNote';
@@ -10,7 +10,7 @@ import '../../../../assets/style/style.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { tableCustomStyles } from '../tableStyle.jsx';
 import DeleteModal from 'ui-component/Modals/DeleteModal';
-import ViewModal from './viewModal';
+import ViewModal from './viewModal.jsx';
 import { capitalizeFirstLetter } from '../utilities/Capitallised';
 import { deleteimg, getimgById } from 'module/licensee/container/imgcontainer/slice';
 import { getCategory, deleteCategory } from 'module/licensee/container/category/slice';

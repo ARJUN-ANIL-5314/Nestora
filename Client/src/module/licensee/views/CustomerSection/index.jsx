@@ -8,7 +8,7 @@ import TextField from '@mui/material/TextField';
 
 import OpenModal from 'ui-component/common/OpenModal';
 import CardHead from 'ui-component/common/CardHead';
-import ViewModal from './viewModal';
+import ViewModal from './viewModal.jsx';
 
 import { capitalize } from 'utils/Capitalised';
 import { getUserCreatedBy } from 'module/vendor/container/userContainer/slice';

@@ -6,7 +6,7 @@ import MainCard from 'ui-component/cards/MainCard';
 import { IconLocation, IconUser } from '@tabler/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import OpenDrawer from 'ui-component/common/OpenDrawer';
-import EditUser from './EditUser';
+import EditUser from './EditUser.jsx';
 import { userLogin } from 'container/LoginContainer/slice';
 import { getUserProfId } from '../../container/profileContainer/slice';
 

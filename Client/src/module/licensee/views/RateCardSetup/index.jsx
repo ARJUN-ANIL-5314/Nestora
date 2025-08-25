@@ -1,7 +1,7 @@
 import DataTable from 'react-data-table-component';
 import React, { useState, useEffect } from 'react';
 import OpenModal from 'ui-component/common/OpenModal';
-import AddRateCardSetup from './AddRateSetup';
+import AddRateCardSetup from './AddRateSetup.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import 'assets/style/style.css';
 import CardHead from 'ui-component/common/CardHead';
@@ -10,11 +10,11 @@ import { Delete, Visibility } from '@mui/icons-material';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import { getRateCardSetup, deleteRateCardSetup } from 'module/licensee/container/RateCardSetupContainer/slice';
 import { tableCustomStyles } from '../tableStyle.jsx';
-import NoDataComponent from './NoDataComponent.js';
+import NoDataComponent from './NoDataComponent.jsx';
 import { Box } from '@mui/system';
 import DeleteModal from 'ui-component/Modals/DeleteModal';
 import { capitalizeFirstLetter } from '../utilities/Capitallised.js';
-import ViewModal from './ViewModal.js';
+import ViewModal from './ViewModal.jsx';
 import { useNavigate } from 'react-router-dom';
 
 const Index = () => {

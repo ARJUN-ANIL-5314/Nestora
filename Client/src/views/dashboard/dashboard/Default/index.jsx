@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
 import { Grid } from '@mui/material';
-import PopularCard from './PopularCard';
-import OrderAction from './OrderAction';
-import PaymentAction from './PaymentAction';
-import MyTeam from './MyTeam';
-import Payment from './Payment';
-import Orders from './Orders';
-import Support from './support';
-import SupportAction from './supportCard';
-import InternalSupport from './internalSupport';
-import InternalSupportAction from './internalSupportCard';
-import Customers from './Customers';
-import CustomerAction from './CustomerAction';
+import PopularCard from './PopularCard.jsx';
+import OrderAction from './OrderAction.jsx';
+import PaymentAction from './PaymentAction.jsx';
+import MyTeam from './MyTeam.jsx';
+import Payment from './Payment.jsx';
+import Orders from './Orders.jsx';
+import Support from './support.jsx';
+import SupportAction from './supportCard.jsx';
+import InternalSupport from './internalSupport.jsx';
+import InternalSupportAction from './internalSupportCard.jsx';
+import Customers from './Customers.jsx';
+import CustomerAction from './CustomerAction.jsx';
 
 import { gridSpacing } from 'store/constant';
 

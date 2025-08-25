@@ -2,7 +2,7 @@ import { takeEvery, call } from 'redux-saga/effects';
 import config from 'config';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import * as actionType from './slice';
+import * as actionType from './slice.js';
 
 function* sendOtpRequest(action) {
   const data = action.payload;

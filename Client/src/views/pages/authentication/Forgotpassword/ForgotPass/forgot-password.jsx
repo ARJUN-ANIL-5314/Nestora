@@ -3,7 +3,7 @@ import { useTheme } from '@mui/material/styles';
 import { Grid, Stack, Typography, useMediaQuery } from '@mui/material';
 import AuthWrapper1 from '../../AuthWrapper1';
 import AuthCardWrapper from '../../AuthCardWrapper';
-import ForgetMain from './ForgetMain';
+import ForgetMain from './ForgetMain.jsx';
 import Logo from 'ui-component/Logo';
 // import AuthFooter from 'ui-component/cards/AuthFooter';
 

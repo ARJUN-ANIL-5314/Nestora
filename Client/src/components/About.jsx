@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import ContactForm from "./contact";
+import ContactForm from "./contact.jsx";
 
 export default function AboutUs() {
   const [showForm, setShowForm] = useState(false);

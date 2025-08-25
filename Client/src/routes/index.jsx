@@ -1,12 +1,12 @@
 import { useRoutes } from 'react-router-dom';
 
 // routes
-import MainRoutes from './MainRoutes';
-import VendorRoutes from './VendorRoutes';
-import AuthenticationRoutes from './AuthenticationRoutes';
-import LicenseeRoutes from './LicenseeRoutes';
-import ProfileRouter from './ProfileRouter';
-import HomeRoute from './Homepage';
+import MainRoutes from './MainRoutes.jsx';
+import VendorRoutes from './VendorRoutes.jsx';
+import AuthenticationRoutes from './AuthenticationRoutes.jsx';
+import LicenseeRoutes from './LicenseeRoutes.jsx';
+import ProfileRouter from './ProfileRouter.jsx';
+import HomeRoute from './Homepage.jsx';
 // ==============================|| ROUTING RENDER ||============================== //
 
 export default function ThemeRoutes() {

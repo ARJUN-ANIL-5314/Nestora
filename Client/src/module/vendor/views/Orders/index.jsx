@@ -2,14 +2,14 @@ import DataTable from 'react-data-table-component';
 import React, { useState, useEffect } from 'react';
 import OpenModal from 'ui-component/common/OpenModal';
 // import { useNavigate } from 'react-router-dom';
-import OrderAddPage from './addOrder/orderAddPage';
+import OrderAddPage from './addOrder/orderAddPage.jsx';
 // import { useNavigate } from 'react-router-dom';
 import CardHead from 'ui-component/common/CardHead';
 import { useDispatch, useSelector } from 'react-redux';
 import DeleteModal from 'ui-component/Modals/DeleteModal';
 import ConfrmModal from 'ui-component/Modals/ConfrmModal';
 import '../../../../assets/style/style.css';
-import ViewModal from './viewModal';
+import ViewModal from './viewModal.jsx';
 import { IconButton } from '@mui/material';
 import { Visibility, TaskAlt, Delete } from '@mui/icons-material';
 // import EditNoteIcon from '@mui/icons-material/EditNote';
@@ -18,7 +18,7 @@ import { addInvoice } from 'module/vendor/container/invoiceContainer/slice';
 import { getOrder } from 'module/vendor/container/orderContainer/slice';
 import { tableCustomStyles } from '../tableStyle.jsx';
 import { capitalizeFirstLetter } from 'module/utlities/Capitallised';
-import NoDataComponent from './NoDataComponent';
+import NoDataComponent from './NoDataComponent.jsx';
 
 export default function Index() {
   // const navigate = useNavigate();

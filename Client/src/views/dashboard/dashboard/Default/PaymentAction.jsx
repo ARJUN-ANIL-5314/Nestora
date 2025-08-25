@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // material-ui
 
 import { Avatar, CardActions, CardContent, Divider, Grid, Typography } from '@mui/material';
-// import TotalIncomeDarkCard from './TotalIncomeDarkCard'
+// import TotalIncomeDarkCard from './TotalIncomeDarkCard.jsx'
 // project imports
 // import BajajAreaChartCard from './BajajAreaChartCard';
 import MainCard from 'ui-component/cards/MainCard';

@@ -2,7 +2,7 @@ import { Button, FormLabel, Grid, MenuItem, Select, Typography } from '@mui/mate
 import { Box } from '@mui/system';
 import React from 'react';
 import MainCard from 'ui-component/cards/MainCard';
-import styles from './style';
+import styles from './style.js';
 import { useTheme } from '@mui/material/styles';
 import '../../../../assets/style/style.css';
 import CloseIcon from '@mui/icons-material/Close';

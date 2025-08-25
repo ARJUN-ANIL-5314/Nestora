@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
 // reducer import
-import customizationReducer from './customizationReducer';
+import customizationReducer from './customizationReducer.js';
 import loginReducer from 'container/LoginContainer/slice';
 import supportReducer from 'container/SupportContainer/slice';
 import countryReducer from 'module/admin/store/reducer';

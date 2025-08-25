@@ -16,7 +16,7 @@ import { getMainCategory } from 'module/licensee/container/mainCategoryContainer
 import { getSpecification, getSpecificationSpec } from 'module/licensee/container/specificationContainer/slice';
 import { getSubCategory } from 'module/licensee/container/subCategoryContainer/slice';
 import { getCategory } from 'module/licensee/container/category/slice';
-import SpecificationTable from './SpecificationTable';
+import SpecificationTable from './SpecificationTable.jsx';
 import { getSpecificationById } from 'module/licensee/container/specificationContainer/slice';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
@@ -496,7 +496,7 @@ export default SpecificationAdd;
 // import { getSpecification, getSpecificationSpec } from 'module/licensee/container/specificationContainer/slice';
 // import { getSubCategory } from 'module/licensee/container/subCategoryContainer/slice';
 // import { getCategory } from 'module/licensee/container/category/slice';
-// import SpecificationTable from './SpecificationTable';
+// import SpecificationTable from './SpecificationTable.jsx';
 // import { addSpecification, getSpecificationById } from 'module/licensee/container/specificationContainer/slice';
 // // import { loginUserFail } from 'container/LoginContainer/slice';
 // // import { toast } from 'react-toastify';

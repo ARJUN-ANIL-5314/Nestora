@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Grid, Card, Typography, IconButton } from '@mui/material';
 import MainCard from 'ui-component/cards/MainCard';
-import MainCategorySelect from './mainCategorySelect';
-import OrderImage from './orderImage';
-import OrderSpecification from './orderSpecification';
+import MainCategorySelect from './mainCategorySelect.jsx';
+import OrderImage from './orderImage.jsx';
+import OrderSpecification from './orderSpecification.jsx';
 import { capitalize } from '../../utilities/Capitallised';
-import CustomerModal from './customerModal';
-import OrderShowTable from './orderShowTable';
+import CustomerModal from './customerModal.jsx';
+import OrderShowTable from './orderShowTable.jsx';
 import PersonIcon from '@mui/icons-material/Person';
 import { useLocation } from 'react-router-dom';
 

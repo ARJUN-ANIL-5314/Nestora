@@ -13,7 +13,7 @@ import './assets/style/index.css';
 import themes from './themes';
 
 // project imports
-import NavigationScroll from './layout/NavigationScroll';
+import NavigationScroll from './layout/NavigationScroll.js';
 
 // ==============================|| APP ||============================== //
 

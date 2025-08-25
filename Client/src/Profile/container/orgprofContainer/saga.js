@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import config from 'config';
 import auth from 'container/auth';
-import * as actionType from './slice';
+import * as actionType from './slice.js';
 import { loginUser } from 'container/LoginContainer/slice';
 
 function* addOrgProf(action) {

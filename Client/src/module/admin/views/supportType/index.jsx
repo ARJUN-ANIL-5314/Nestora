@@ -1,7 +1,7 @@
 import DataTable from 'react-data-table-component';
 import React, { useState } from 'react';
 import OpenModal from 'ui-component/common/OpenModal';
-import AddEditModal from './addEditModal';
+import AddEditModal from './addEditModal.jsx';
 import '../../../../assets/style/style.css';
 // import TableRows from 'ui-component/Table/TableRows';
 import { IconButton } from '@mui/material';
@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { tableCustomStyles } from '../tableStyle.jsx';
 import { useEffect } from 'react';
 import DeleteModal from 'ui-component/Modals/DeleteModal';
-import ViewModal from './viewModal';
+import ViewModal from './viewModal.jsx';
 import NoDataComponent from 'module/utlities/NoDataComponent.js';
 
 import { getSupportType, deleteSupportType } from 'module/admin/container/supportTypeContainer/slice';

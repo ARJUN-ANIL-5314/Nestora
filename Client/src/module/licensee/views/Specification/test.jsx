@@ -15,7 +15,7 @@ import { getMainCategory } from 'module/licensee/container/mainCategoryContainer
 import { getSpecification, getSpecificationSpec } from 'module/licensee/container/specificationContainer/slice';
 import { getSubCategory } from 'module/licensee/container/subCategoryContainer/slice';
 import { getCategory } from 'module/licensee/container/category/slice';
-import SpecificationTable from './SpecificationTable';
+import SpecificationTable from './SpecificationTable.jsx';
 import { getSpecificationById, getSingleSpec, updateSpecification } from 'module/licensee/container/specificationContainer/slice';
 import { useLocation } from 'react-router-dom';
 import { useMemo } from 'react';
