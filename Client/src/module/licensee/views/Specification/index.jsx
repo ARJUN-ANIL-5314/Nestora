@@ -4,11 +4,8 @@ import OpenModal from 'ui-component/common/OpenModal';
 import SpecificationAdd from './SpecificationAdd.jsx';
 import CardHead from 'ui-component/common/CardHead';
 import { useDispatch, useSelector } from 'react-redux';
-import '../../../../assets/style/style.css'
-import { capitalizeFirstLetter } from '../utilities/Capitallised.jsx';
-
-import { capitalizeFirstLetter } from '../utilities/Capitallised';
-ff0e4d8 (fix: adjusted import extensions and updated file references for Vite compatibility)
+import '../../../../assets/style/style.css';
+import { capitalizeFirstLetter } from '../utilities/Capitallised.jsx';  // Keep only this import
 import ViewModal from './ViewModal.jsx';
 import { IconButton } from '@mui/material';
 import { Visibility, Delete } from '@mui/icons-material';
@@ -29,6 +26,7 @@ export default function Index() {
   const [openModal, setOpenModal] = useState(false);
   const [modalComponent, setModalComponent] = useState(null);
   const [modalHeading, setModalHeading] = useState('');
+  const [filteredData, setFilteredData] = useState([]);
 
   const modalStyle = { width: '60%' };
   const dispatch = useDispatch();
@@ -68,17 +66,18 @@ export default function Index() {
     const searchValue = event.target.value.toLowerCase();
     console.log('==searchValue', searchValue);
 
-    const filteredData = specificationDetails.rows.filter((row) => {
-      console.log('==row', row);
+    if (!specificationDetails || !specificationDetails.rows) return;
+
+    const filtered = specificationDetails.rows.filter((row) => {
       return row.subCatgName.toLowerCase().includes(searchValue);
     });
-    setFilteredData(filteredData);
+    setFilteredData(filtered);
   };
 
   const handleCloseModal = (formtype) => {
     setOpenModal(false);
     setShowDeleteModal(false);
-    if (formtype === 'addform') setPage(1);
+    // setPage is undefined in your code, remove or define if needed
   };
 
   const handleDeleteModal = (item) => {
@@ -153,7 +152,7 @@ export default function Index() {
       columns={columns}
       customStyles={tableCustomStyles}
       striped
-      data={specificationDetails.rows}
+      data={filteredData.length > 0 ? filteredData : (specificationDetails?.rows || [])}
       highlightOnHover
       pointerOnHover
       subHeader
