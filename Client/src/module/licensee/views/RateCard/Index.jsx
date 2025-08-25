@@ -16,7 +16,7 @@ import { Box } from '@mui/system';
 <<<<<<< HEAD
 import DeleteModal from 'ui-component/Modals/DeleteModal.jsx';
 import { capitalizeFirstLetter } from '../utilities/Capitallised.jsx';
-import ViewModal from './ViewModal.jsx';
+import ViewModal from './viewModal.jsx';
 =======
 import DeleteModal from 'ui-component/Modals/DeleteModal';
 import { capitalizeFirstLetter } from '../utilities/Capitallised.js';
