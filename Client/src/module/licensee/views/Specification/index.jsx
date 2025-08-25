@@ -5,7 +5,7 @@ import SpecificationAdd from './SpecificationAdd.jsx';
 import CardHead from 'ui-component/common/CardHead';
 import { useDispatch, useSelector } from 'react-redux';
 import '../../../../assets/style/style.css';
-import { capitalizeFirstLetter } from '../utilities/Capitallised.jsx';  // Keep only this import
+import { capitalizeFirstLetter } from '../utilities/Capitallised.jsx';
 import ViewModal from './ViewModal.jsx';
 import { IconButton } from '@mui/material';
 import { Visibility, Delete } from '@mui/icons-material';
@@ -26,7 +26,6 @@ export default function Index() {
   const [openModal, setOpenModal] = useState(false);
   const [modalComponent, setModalComponent] = useState(null);
   const [modalHeading, setModalHeading] = useState('');
-  const [filteredData, setFilteredData] = useState([]);
 
   const modalStyle = { width: '60%' };
   const dispatch = useDispatch();
@@ -66,18 +65,17 @@ export default function Index() {
     const searchValue = event.target.value.toLowerCase();
     console.log('==searchValue', searchValue);
 
-    if (!specificationDetails || !specificationDetails.rows) return;
-
-    const filtered = specificationDetails.rows.filter((row) => {
+    const filteredData = specificationDetails.rows.filter((row) => {
+      console.log('==row', row);
       return row.subCatgName.toLowerCase().includes(searchValue);
     });
-    setFilteredData(filtered);
+    setFilteredData(filteredData);
   };
 
   const handleCloseModal = (formtype) => {
     setOpenModal(false);
     setShowDeleteModal(false);
-    // setPage is undefined in your code, remove or define if needed
+    if (formtype === 'addform') setPage(1);
   };
 
   const handleDeleteModal = (item) => {
@@ -152,7 +150,7 @@ export default function Index() {
       columns={columns}
       customStyles={tableCustomStyles}
       striped
-      data={filteredData.length > 0 ? filteredData : (specificationDetails?.rows || [])}
+      data={specificationDetails.rows}
       highlightOnHover
       pointerOnHover
       subHeader
