@@ -4,7 +4,7 @@ import OpenModal from 'ui-component/common/OpenModal';
 import { useDispatch, useSelector } from 'react-redux';
 import DeleteModal from 'ui-component/Modals/DeleteModal';
 import '../../../../assets/style/style.css';
-import ViewModal from './ViewModal.js';
+import ViewModal from './ViewModal.jsx';
 import { FormControl, IconButton, MenuItem, Select, Tooltip } from '@mui/material';
 import { Visibility } from '@mui/icons-material';
 import { capitalize } from '../utilities/Capitallised';
