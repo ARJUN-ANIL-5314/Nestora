@@ -1,21 +1,21 @@
 import DataTable from 'react-data-table-component';
 import React, { useState, useEffect } from 'react';
 import OpenModal from 'ui-component/common/OpenModal';
-import AddRateCard from './AddRateCard.js';
+import AddRateCard from './AddRateCard.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import 'assets/style/style.css';
 import CardHead from 'ui-component/common/CardHead';
-import EditModal from './EditModal.js';
+import EditModal from './EditModal.jsx';
 import { IconButton } from '@mui/material';
 import { Delete, Visibility } from '@mui/icons-material';
 import EditNoteIcon from '@mui/icons-material/EditNote';
-import { getRateCard, deleteRateCard } from 'module/licensee/container/RateCardContainer/slice.js';
+import { getRateCard, deleteRateCard } from 'module/licensee/container/RateCardContainer/slice.jsx';
 import { tableCustomStyles } from '../tableStyle.jsx';
-import NoDataComponent from './NoDataComponent.js';
+import NoDataComponent from './NoDataComponent.jsx';
 import { Box } from '@mui/system';
-import DeleteModal from 'ui-component/Modals/DeleteModal';
-import { capitalizeFirstLetter } from '../utilities/Capitallised.js';
-import ViewModal from './ViewModal.js';
+import DeleteModal from 'ui-component/Modals/DeleteModal.jsx';
+import { capitalizeFirstLetter } from '../utilities/Capitallised.jsx';
+import ViewModal from './ViewModal.jsx';
 
 const Index = () => {
   const [rateCardAdd, setrateCardAdd] = useState(false);
@@ -92,7 +92,6 @@ const Index = () => {
   const deleteReferenceConfirm = async () => {
     try {
       dispatch(deleteRateCard(selectedId));
-      // dispatch(getRateCard());
     } catch (error) {
       console.error('Error deleting :', error);
     } finally {
@@ -109,7 +108,6 @@ const Index = () => {
       name: 'ITEM',
       selector: (row) => capitalizeFirstLetter(row.item.join(',  '))
     },
-
     {
       name: 'VALUE',
       selector: (row) => {
@@ -128,7 +126,6 @@ const Index = () => {
       name: 'RATE',
       selector: (row) => row.rate
     },
-
     {
       name: 'ACTIONS',
       cell: (row) => (
