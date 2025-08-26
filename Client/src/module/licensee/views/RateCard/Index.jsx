@@ -9,7 +9,7 @@ import EditModal from './EditModal.jsx';
 import { IconButton } from '@mui/material';
 import { Delete, Visibility } from '@mui/icons-material';
 import EditNoteIcon from '@mui/icons-material/EditNote';
-import { getRateCard, deleteRateCard } from 'module/licensee/container/RateCardContainer/slice.jsx';
+import { getRateCard, deleteRateCard } from 'module/licensee/container/RateCardContainer/slice.js';
 import { tableCustomStyles } from '../tableStyle.jsx';
 import NoDataComponent from './NoDataComponent.jsx';
 import { Box } from '@mui/system';
