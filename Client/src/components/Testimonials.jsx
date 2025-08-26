@@ -6,7 +6,7 @@ function Testimonials() {
   const [index, setIndex] = useState(0);
   const [reviews, setReviews] = useState([]);
 
-  const API_URL = import.meta.env.BACKEND_API
+  const API_URL = import.meta.env.VITE_API_URL
 
   useEffect(() => {
     const fetchReviews = async () => {

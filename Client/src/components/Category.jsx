@@ -12,7 +12,10 @@ export default function CategorySwiper() {
   const [swiperInstance, setSwiperInstance] = useState(null);
   const [data, setData] = useState([]); // FIX: Initialize as empty array
 
-  const API_URL = import.meta.env.BACKEND_API
+  const API_URL = import.meta.env.VITE_API_URL
+
+  console.log("API_URL:", import.meta.env.VITE_API_URL);
+
 
 
   useEffect(() => {
