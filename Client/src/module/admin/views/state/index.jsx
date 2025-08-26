@@ -14,8 +14,7 @@ import '../../../../assets/style/style.css';
 import { getState, deleteState } from 'module/admin/container/stateContainer/slice';
 import { capitalizeFirstLetter } from 'module/licensee/views/utilities/Capitallised.js';
 
-// Corrected the folder name from 'utlities' to 'utilities'
-import NoDataComponent from 'module/utilities/NoDataComponent';
+import NoDataComponent from 'module/utlities/NoDataComponent.jsx';
 
 export default function Index() {
   const [openModal, setOpenModal] = useState(false);
