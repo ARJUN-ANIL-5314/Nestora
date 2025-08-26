@@ -25,7 +25,7 @@ export default function CategorySwiper() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch("http://localhost:3002/category");
+        const response = await fetch("https://nestora-4tme.onrender.com/category");
   
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
