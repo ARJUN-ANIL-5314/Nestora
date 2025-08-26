@@ -13,7 +13,7 @@ import { Visibility, Delete } from '@mui/icons-material';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import { getBank, deleteBank } from 'module/admin/container/bankContainer/slice';
 import { capitalizeFirstLetter } from 'module/utlities/Capitallised';
-import NoDataComponent from 'module/utlities/NoDataComponent.js';
+import NoDataComponent from 'module/utlities/NoDataComponent.jsx';
 
 export default function Support() {
   const [tableHeading, setTableHeading] = useState('Bank');

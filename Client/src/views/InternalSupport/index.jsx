@@ -19,7 +19,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getInternalSupport, updateStatus, deleteSupport, totalCount } from '../../container/SupportContainer/slice';
 import { tableCustomStyles } from '../../ui-component/common/tableStyle';
 import 'assets/style/style.css';
-import NoDataComponent from '../../ui-component/common/NoDataComponent';
+import NoDataComponent from '../../ui-component/common/NoDataComponent.jsx';
 import formatDateTime from '../../utils/formatDateTime';
 //import formatDate from '../../utils/formatDate'
 import { capitalize } from '../../utils/Capitalised';

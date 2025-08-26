@@ -13,7 +13,7 @@ import '../../../../assets/style/style.css';
 import { tableCustomStyles } from '../tableStyle.jsx';
 import { getEnqSource, deleteEnqSource } from 'module/admin/container/enqSourceContainer/slice';
 import { capitalizeFirstLetter } from 'module/utlities/Capitallised';
-import NoDataComponent from 'module/utlities/NoDataComponent.js';
+import NoDataComponent from 'module/utlities/NoDataComponent.jsx';
 
 export default function Index() {
   const [openModal, setOpenModal] = useState(false);

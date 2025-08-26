@@ -14,7 +14,7 @@ import { getUserCreatedBy, deleteUser, changeStatus } from 'module/vendor/contai
 import { tableCustomStyles } from '../tableStyle';
 import '../../../../assets/style/style.css';
 import { capitalizeFirstLetter } from 'module/utlities/Capitallised';
-import NoDataComponent from 'module/utlities/NoDataComponent';
+import NoDataComponent from 'module/utlities/NoDataComponent.jsx';
 import formatDateTime from 'utils/formatDateTime';
 
 export default function Index() {

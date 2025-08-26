@@ -15,7 +15,7 @@ import { getState, deleteState } from 'module/admin/container/stateContainer/sli
 import { capitalizeFirstLetter } from 'module/licensee/views/utilities/Capitallised.js';
 
 // Corrected the folder name from 'utlities' to 'utilities'
-import NoDataComponent from 'module/utilities/NoDataComponent.js';
+import NoDataComponent from 'module/utilities/NoDataComponent.jsx';
 
 export default function Index() {
   const [openModal, setOpenModal] = useState(false);

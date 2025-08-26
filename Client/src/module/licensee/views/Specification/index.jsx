@@ -12,7 +12,7 @@ import { Visibility, Delete } from '@mui/icons-material';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import { getSpecification, deleteSpecification } from 'module/licensee/container/specificationContainer/slice.jsx';
 import { tableCustomStyles } from '../tableStyle.jsx';
-import NoDataComponent from './NoDataComponent.js';
+import NoDataComponent from './NoDataComponent.jsx';
 import { useNavigate } from 'react-router-dom';
 import DeleteModal from 'ui-component/Modals/DeleteModal.jsx';
 

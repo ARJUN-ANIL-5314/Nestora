@@ -13,7 +13,7 @@ import { getSupport, deleteSupport, updateStatus, totalCount } from 'container/S
 import { capitalize } from '../../utils/Capitalised';
 import { tableCustomStyles } from '../../ui-component/common/tableStyle';
 import 'assets/style/style.css';
-import NoDataComponent from '../../ui-component/common/NoDataComponent';
+import NoDataComponent from '../../ui-component/common/NoDataComponent.jsx';
 import formatDateTime from 'utils/formatDateTime';
 //import formatDate from 'utils/formatDate'
 import ChangeStatusModal from 'ui-component/Modals/ChangeStatusModel';

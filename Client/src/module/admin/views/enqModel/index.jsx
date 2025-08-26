@@ -14,7 +14,7 @@ import '../../../../assets/style/style.css';
 
 import { getEnqMode, deleteEnqMode } from 'module/admin/container/enqModeContainer/slice';
 import { capitalizeFirstLetter } from 'module/utlities/Capitallised.js';
-import NoDataComponent from 'module/utlities/NoDataComponent.js';
+import NoDataComponent from 'module/utlities/NoDataComponent.jsx';
 
 export default function Index() {
   const [openModal, setOpenModal] = useState(false);

@@ -12,7 +12,7 @@ import DeleteModal from 'ui-component/Modals/DeleteModal';
 import ViewModal from './viewModal.jsx';
 import '../../../../assets/style/style.css';
 import { getDistrict, deleteDistrict } from 'module/admin/container/districtContainer/slice';
-import NoDataComponent from 'module/utlities/NoDataComponent.js';
+import NoDataComponent from 'module/utlities/NoDataComponent.jsx';
 import { capitalizeFirstLetter } from 'module/licensee/views/utilities/Capitallised.js';
 
 export default function Index() {

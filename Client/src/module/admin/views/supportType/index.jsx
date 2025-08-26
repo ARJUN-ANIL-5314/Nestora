@@ -13,7 +13,7 @@ import { tableCustomStyles } from '../tableStyle.jsx';
 import { useEffect } from 'react';
 import DeleteModal from 'ui-component/Modals/DeleteModal';
 import ViewModal from './viewModal.jsx';
-import NoDataComponent from 'module/utlities/NoDataComponent.js';
+import NoDataComponent from 'module/utlities/NoDataComponent.jsx';
 
 import { getSupportType, deleteSupportType } from 'module/admin/container/supportTypeContainer/slice';
 import { capitalizeFirstLetter } from 'module/utlities/Capitallised';

@@ -14,7 +14,7 @@ import ViewModal from './viewModal.jsx';
 import { capitalize } from '../utilities/Capitallised';
 import { getCustomer, deleteCustomer } from 'module/vendor/container/customerContainer/slice';
 import { tableCustomStyles } from '../tableStyle.jsx';
-import NoDataComponent from 'module/utlities/NoDataComponent';
+import NoDataComponent from 'module/utlities/NoDataComponent.jsx';
 import { roleMapping } from 'module/utlities/user_name';
 import formatDateTime from 'utils/formatDateTime';
 

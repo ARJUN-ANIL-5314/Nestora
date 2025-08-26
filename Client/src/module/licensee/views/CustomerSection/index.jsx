@@ -14,7 +14,7 @@ import { capitalize } from 'utils/Capitalised';
 import { getUserCreatedBy } from 'module/vendor/container/userContainer/slice';
 import { licensegetCustomer } from 'module/vendor/container/customerContainer/slice';
 import { tableCustomStyles } from '../tableStyle.jsx';
-import NoDataComponent from 'module/utlities/NoDataComponent';
+import NoDataComponent from 'module/utlities/NoDataComponent.jsx';
 import { roleMapping } from 'module/utlities/user_name';
 import { formatDate } from 'utils/DateTimeFormat';
 
