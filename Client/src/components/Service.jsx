@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import logo from '../assets/images/hand-shake.png';
 import home from '../assets/images/home.png';
@@ -10,14 +10,35 @@ const cardVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 0.2,
+      delay: i * 0.6,
       duration: 0.6,
       ease: 'easeOut',
     },
   }),
 };
 
+function useScrollDown() {
+  const [scrollDown, setScrollDown] = useState(false);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY.current) {
+        setScrollDown(true);
+      }
+      lastScrollY.current = window.scrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return scrollDown;
+}
+
 function Example() {
+  const scrollDown = useScrollDown();
+
   return (
     <div className="mb-5">
       <h1 className="text-center text-dark-b p-5 mt-7 font-semibold text-2xl md:text-3xl pb-7 lg:pb-0">
@@ -25,7 +46,7 @@ function Example() {
       </h1>
 
       <div className="h-auto gap-11 lg:h-[380px] w-full grid grid-cols-1 lg:grid-cols-3 place-items-center p-8 lg:p-10 1100px:p-5 py-5 pt-0 text-center">
-        {[ 
+        {[
           {
             icon: home,
             title: 'Buying & Renting Services',
@@ -49,12 +70,15 @@ function Example() {
             key={index}
             className="bg-gray-100 w-64 lg:w-72 1100px:w-80 h-auto lg:h-[240px] shadow-custom-shadow rounded-xl p-4"
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            animate={scrollDown ? 'visible' : 'hidden'}
             custom={index}
             variants={cardVariants}
           >
-            <img src={service.icon} className="h-10 w-16 mx-auto my-3" alt="Service Icon" />
+            <img
+              src={service.icon}
+              className="h-10 w-16 mx-auto my-3"
+              alt="Service Icon"
+            />
             <h1 className="font-medium md:font-bold text-lg p-2">{service.title}</h1>
             <p className="text-sm text-gray-500">{service.desc}</p>
           </motion.div>
