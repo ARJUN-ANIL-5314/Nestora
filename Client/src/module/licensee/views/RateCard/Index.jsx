@@ -14,7 +14,7 @@ import { tableCustomStyles } from '../tableStyle.jsx';
 import NoDataComponent from './NoDataComponent.jsx';
 import { Box } from '@mui/system';
 
-import DeleteModal from 'ui-component/Modals/DeleteModal';
+import DeleteModal from 'ui-component/Modals/DeleteModal.js';
 import { capitalizeFirstLetter } from '../utilities/Capitallised.js';
 import ViewModal from './viewModal.jsx';
 

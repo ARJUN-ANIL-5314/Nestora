@@ -14,7 +14,7 @@ import NoDataComponent from './NoDataComponent.jsx';
 import { Box } from '@mui/system';
 import DeleteModal from 'ui-component/Modals/DeleteModal';
 import { capitalizeFirstLetter } from '../utilities/Capitallised.js';
-import ViewModal from './ViewModal.jsx';
+import ViewModal from './viewModal.jsx';
 import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
