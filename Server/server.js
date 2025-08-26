@@ -8,7 +8,7 @@ require('./database');
 
 const app = express();
 
-const PORT = process.env.PORT || 3002; // Use Render's port if available
+const PORT = process.env.PORT || 3002; 
 
 app.use(cors({
 origin: [
