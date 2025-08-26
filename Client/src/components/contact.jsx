@@ -7,6 +7,10 @@ import { toast } from 'react-toastify';
 
 
 const ContactForm = () => {
+
+  const API_URL = import.meta.env.VITE_API_URL
+
+
   return (
     <div className="p-6 w-full max-w-md mx-auto">
       <h2 className="text-2xl font-semibold text-left mb-4 text-dark-b">Contact us</h2>
@@ -22,7 +26,7 @@ const ContactForm = () => {
         })}
         onSubmit={async (values, { resetForm, setSubmitting }) => {
           try {
-            const response = await axios.post("http://localhost:3002/contact-info", values);
+            const response = await axios.post(`${API_URL}/contact-info`, values);
             console.log("Server Response:", response.data);
             toast.success("Thank you! Your message has been sent.");
             resetForm();
