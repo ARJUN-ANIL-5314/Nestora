@@ -14,7 +14,7 @@ import '../../../../assets/style/style.css';
 import { getCountry, deleteCountry } from 'module/admin/container/countryContainer/slice';
 
 import { capitalizeFirstLetter } from 'module/utilities/Capitallised';
-import NoDataComponent from 'module/utilities/NoDataComponent.jsx';
+import NoDataComponent from 'module/utilities/NoDataComponent';
 
 export default function Country() {
   const [openModal, setOpenModal] = useState(false);

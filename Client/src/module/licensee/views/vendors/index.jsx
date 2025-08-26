@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUserCreatedBy, deleteUser } from 'module/vendor/container/userContainer/slice';
 import { tableCustomStyles } from '../tableStyle.jsx';
 import '../../../../assets/style/style.css';
-import NoDataComponent from '../NoDataComponent.js';
+import NoDataComponent from '../NoDataComponent.jsx';
 import { capitalize } from 'utils/Capitalised';
 import formatDateTime from 'utils/formatDateTime';
 

@@ -14,7 +14,7 @@ import { tableCustomStyles } from '../tableStyle.jsx';
 import '../../../../assets/style/style.css';
 import { roleMapping } from 'module/utlities/user_name';
 import { capitalizeFirstLetter } from 'module/utlities/Capitallised';
-import NoDataComponent from '../NoDataComponent.js';
+import NoDataComponent from '../NoDataComponent.jsx';
 import { capitalize } from 'utils/Capitalised';
 import formatDateTime from 'utils/formatDateTime';
 

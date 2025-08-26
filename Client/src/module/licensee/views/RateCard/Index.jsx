@@ -11,7 +11,7 @@ import { Delete, Visibility } from '@mui/icons-material';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import { getRateCard, deleteRateCard } from 'module/licensee/container/RateCardContainer/slice.jsx';
 import { tableCustomStyles } from '../tableStyle.jsx';
-import NoDataComponent from './NoDataComponent.js';
+import NoDataComponent from './NoDataComponent.jsx';
 import { Box } from '@mui/system';
 
 import DeleteModal from 'ui-component/Modals/DeleteModal.js';

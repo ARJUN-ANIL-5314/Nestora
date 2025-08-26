@@ -17,7 +17,7 @@ import { getCategory } from 'module/licensee/container/category/slice';
 import { getMainCategory } from 'module/licensee/container/mainCategoryContainer/slice';
 import { capitalizeFirstLetter } from '../utilities/Capitallised';
 import { uploadImageNull } from 'module/licensee/container/imgcontainer/slice';
-import NoDataComponent from '../NoDataComponent.js';
+import NoDataComponent from '../NoDataComponent.jsx';
 
 export default function Index() {
   const [openModal, setOpenModal] = useState(false);
