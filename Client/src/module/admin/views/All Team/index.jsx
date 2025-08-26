@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllmyteam, changeStatus } from 'module/vendor/container/userContainer/slice';
 import { tableCustomStyles } from '../tableStyle';
 import '../../../../assets/style/style.css';
-import { roleMapping } from 'module/utlities/user_name';
+import { roleMapping } from 'module/utlities/user_name.js';
 import NoDataComponent from 'module/utlities/NoDataComponent';
 import FilterModalComponent from './FilterModalComponent.jsx';
 import { capitalize } from 'utils/Capitalised';

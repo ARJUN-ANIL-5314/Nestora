@@ -13,7 +13,7 @@ import ViewModal from './viewModal.jsx';
 import '../../../../assets/style/style.css';
 
 import { getEnqMode, deleteEnqMode } from 'module/admin/container/enqModeContainer/slice';
-import { capitalizeFirstLetter } from 'module/utlities/Capitallised.js';
+import { capitalizeFirstLetter } from 'module/utlities/Capitallised.jsx';
 import NoDataComponent from 'module/utlities/NoDataComponent.jsx';
 
 export default function Index() {
