@@ -13,7 +13,7 @@ import ViewModal from './viewModal.jsx';
 import '../../../../assets/style/style.css';
 import { getCountry, deleteCountry } from 'module/admin/container/countryContainer/slice';
 
-import { capitalizeFirstLetter } from 'module/utilities/Capitallised';
+import { capitalizeFirstLetter } from 'module/utlities/Capitallised.jsx';
 import NoDataComponent from 'module/utilities/NoDataComponent';
 
 export default function Country() {
