@@ -6,10 +6,12 @@ function Testimonials() {
   const [index, setIndex] = useState(0);
   const [reviews, setReviews] = useState([]);
 
+  const API_URL = process.env.BACKEND_API
+
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await fetch("https://nestora-4tme.onrender.com/reviews");
+        const response = await fetch(`${API_URL}/reviews`);
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }

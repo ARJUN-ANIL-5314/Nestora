@@ -12,7 +12,9 @@ export default function CategorySwiper() {
   const [swiperInstance, setSwiperInstance] = useState(null);
   const [data, setData] = useState([]); // FIX: Initialize as empty array
 
-  // Attach navigation buttons after component mounts
+  const API_URL = process.env.BACKEND_API
+
+
   useEffect(() => {
     if (swiperInstance && swiperInstance.params) {
       swiperInstance.params.navigation.prevEl = prevRef.current;
@@ -25,7 +27,7 @@ export default function CategorySwiper() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch("https://nestora-4tme.onrender.com/category");
+        const response = await fetch(`${API_URL}/category`);
   
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
