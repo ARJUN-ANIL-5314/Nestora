@@ -18,7 +18,7 @@ import { addInvoice } from 'module/vendor/container/invoiceContainer/slice';
 import { getOrder } from 'module/vendor/container/orderContainer/slice';
 import { tableCustomStyles } from '../tableStyle.jsx';
 import { capitalizeFirstLetter } from 'module/utlities/Capitallised';
-import NoDataComponent from './NoDataComponent.jsx';
+import NoDataComponent from './NoDataComponent';
 
 export default function Index() {
   // const navigate = useNavigate();

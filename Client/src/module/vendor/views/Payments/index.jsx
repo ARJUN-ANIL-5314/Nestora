@@ -10,7 +10,7 @@ import { Visibility } from '@mui/icons-material';
 import { capitalize } from '../utilities/Capitallised';
 import { getCustomer, deleteCustomer } from 'module/vendor/container/customerContainer/slice';
 import { tableCustomStyles } from '../tableStyle.jsx';
-import NoDataComponent from './NoDataComponent.jsx';
+import NoDataComponent from './NoDataComponent';
 import AddModalbox from './addPayment/addPayment.jsx';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
