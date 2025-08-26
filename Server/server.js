@@ -11,7 +11,10 @@ const app = express();
 const PORT = process.env.PORT || 3002; // Use Render's port if available
 
 app.use(cors({
-  origin: "http://localhost:3000", 
+origin: [
+    "http://localhost:3000",         // local 
+    "https://nestora-1.onrender.com" // front end deployment
+  ], 
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"]
