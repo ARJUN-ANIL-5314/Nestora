@@ -5,8 +5,6 @@ import SpecificationAdd from './specificationAdd.jsx';
 import CardHead from 'ui-component/common/CardHead';
 import { useDispatch, useSelector } from 'react-redux';
 import '../../../../assets/style/style.css';
-import { capitalizeFirstLetter } from '../utilities/Capitallised.jsx';
-import ViewModal from './viewModal.jsx';
 import { capitalizeFirstLetter } from '../utilities/Capitallised';
 import ViewModal from './viewModal.jsx';
 import { IconButton } from '@mui/material';
