@@ -48,7 +48,7 @@ export default function CategorySwiper() {
   
 
   return (
-    <div className="w-full  p-0 md:py-10 bg-gray-100">
+    <div className="w-full  p-0 md:py-10 bg-gray-100" id='category'>
       <div className="container mx-auto text-center p-6   px-6">
         <h2 className="text-2xl md:text-3xl  text-dark-b font-semibold mb-6">Discover Your Favorites</h2>
         <div className="relative max-w-6xl mx-auto">

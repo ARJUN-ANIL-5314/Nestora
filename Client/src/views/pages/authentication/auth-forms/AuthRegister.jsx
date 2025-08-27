@@ -111,12 +111,12 @@ const FirebaseRegister = ({ ...others }) => {
       >
         {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (
           <form noValidate onSubmit={handleSubmit} {...others}>
-            <Grid container spacing={4}>
+            <Grid container spacing={2} >
               <Grid item xs={12} sm={6}>
                 <TextField fullWidth label="First Name" margin="normal" name="fname" type="text" autoComplete="off" variant="outlined"  sx={{ padding: '3px' }}/>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <TextField fullWidth label="Last Name" margin="normal" name="lname" type="text" autoComplete="off" variant="outlined" sx={{ padding: '3px' }} />
+                <TextField fullWidth label="Last Name" margin="normal" name="lname" type="text" autoComplete="off" variant="outlined"  sx={{ padding: '3px' }}  />
               </Grid>
             </Grid>
             <FormControl fullWidth error={Boolean(touched.email && errors.email)} margin="normal" variant="outlined" sx={{ padding: '3px' }}>

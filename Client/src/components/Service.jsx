@@ -40,7 +40,7 @@ function Example() {
   const scrollDown = useScrollDown();
 
   return (
-    <div className="mb-5">
+    <div className="mb-5 " id='service'>
       <h1 className="text-center text-dark-b p-5 mt-7 font-semibold text-2xl md:text-3xl pb-7 lg:pb-0">
         Our Services
       </h1>

@@ -7,7 +7,7 @@ export default function AboutUs() {
   const [showMoreText, setShowMoreText] = useState(false);
 
   return (
-    <div className="w-full py-16">
+    <div className="w-full py-16" id="contact">
       <div className="container mx-auto flex flex-col md:flex-row items-center px-6 md:px-12 lg:px-24">
         
         {/* Image Animation */}

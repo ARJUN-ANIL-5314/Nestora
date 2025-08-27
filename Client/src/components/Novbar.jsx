@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import logo from '../assets/images/Home/Nestora.png';
 
 function Navbar() {
@@ -7,12 +8,12 @@ function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full  bg-[#edeee8] bg-opacity-50 backdrop-blur-md z-50 font-bold">
+      <nav className="fixed top-0 left-0 w-full bg-[#edeee8] bg-opacity-50 backdrop-blur-md z-50 font-bold">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a href="#" className="flex items-center space-x-1 rtl:space-x-reverse">
+          <HashLink smooth to="/#home" className="flex items-center space-x-1 rtl:space-x-reverse">
             <img src={logo} className="h-8 md:h-11 w-12 md:w-16 ml-1 p-1" alt="Logo" />
-            <span className="self-center text-dark-b text-2xl md:text-3xl font-semibold whitespace-nowrap  tracking-wide ml-0">Nestora</span>
-          </a>
+            <span className="self-center text-dark-b text-2xl md:text-3xl font-semibold whitespace-nowrap tracking-wide ml-0">Nestora</span>
+          </HashLink>
 
           {/* Mobile menu toggle */}
           <button
@@ -30,58 +31,62 @@ function Navbar() {
           </button>
 
           {/* Menu items */}
-          <div className={`${isOpen ? 'block' : 'hidden' } w-full md:flex md:w-auto items-center `} id="navbar-default">
+          <div className={`${isOpen ? 'block' : 'hidden'} w-full md:flex md:w-auto items-center`} id="navbar-default">
             <ul
-  className={`font-medium flex flex-col md:flex-row p-4 md:p-0 mt-4 border-2 border-blue-500 rounded-lg md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-opacity-10 dark:border-gray-600 
+              className={`font-medium flex flex-col md:flex-row p-4 md:p-0 mt-4 border-2 border-blue-500 rounded-lg md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-opacity-10 dark:border-gray-600 
     ${isOpen ? 'bg-white' : 'bg-transparent'}
   `}
->
+            >
 
               {/* Home */}
               <li>
-                <a
-                  href="#"
+                <HashLink
+                  smooth
+                  to="/#home"
                   className="block py-2 px-3 text-dark-b md:p-0 md:hover:text-blue-700 hover:bg-gray-100 md:hover:bg-transparent dark:text-light-b md:dark:hover:text-dark-b
                    dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent font-bold"
                   aria-current="page"
                 >
                   Home
-                </a>
+                </HashLink>
               </li>
 
               {/* Services */}
               <li>
-                <a
-                  href="#"
+                <HashLink
+                  smooth
+                  to="/#service"
                   className="block py-2 px-3 text-light-b md:p-0 md:hover:text-dark-b hover:bg-gray-100 md:hover:bg-transparent dark:text-light-b md:dark:hover:text-dark-b dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent font-bold"
                 >
                   Services
-                </a>
+                </HashLink>
               </li>
 
               {/* Properties */}
               <li>
-                <a
-                  href="#"
+                <HashLink
+                  smooth
+                  to="/#category"
                   className="block py-2 px-3 text-light-b md:p-0 md:hover:text-dark-b hover:bg-gray-100 md:hover:bg-transparent dark:text-light-b md:dark:hover:text-dark-b dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent font-bold"
                 >
                   Properties
-                </a>
+                </HashLink>
               </li>
 
               {/* Contact */}
               <li>
-                <a
-                  href="#"
+                <HashLink
+                  smooth
+                  to="/#contact"
                   className="block py-2 px-3 text-light-b md:p-0 md:hover:text-dark-b hover:bg-gray-100 md:hover:bg-transparent dark:text-light-b md:dark:hover:text-dark-b dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent font-bold"
                 >
                   Contact
-                </a>
+                </HashLink>
               </li>
             </ul>
 
             {/* Sign up button */}
-            <Link to={'./register'}>
+            <Link to={'/register'}>
               <button className="block w-full md:w-auto text-white bg-dark-b hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 mt-4 md:mt-0 md:ml-12 dark:bg-dark-b dark:hover:bg-blue-700 dark:focus:ring-dark-b">
                 Sign up
               </button>

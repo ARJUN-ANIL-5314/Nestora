@@ -12,7 +12,7 @@ const ContactForm = () => {
 
 
   return (
-    <div className="p-6 w-full max-w-md mx-auto">
+    <div className="p-6 w-full max-w-md mx-auto" id="contact">
       <h2 className="text-2xl font-semibold text-left mb-4 text-dark-b">Contact us</h2>
 
       <Formik
