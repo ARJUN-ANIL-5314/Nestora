@@ -9,8 +9,8 @@ import Footer from './Footer.jsx';
 export default function HomePage() {
   return (
     <div>
-      <Novbar />
       <Banner />
+      <Novbar />
       <Service />
       <Category />
       <About />
