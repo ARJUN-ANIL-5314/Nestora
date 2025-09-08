@@ -1,29 +1,24 @@
-# README
+# Nestora
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Nestora is a web application for buying, selling, or renting houses and buildings. Users can browse listings, post properties, and connect with sellers or renters efficiently.
 
-### What is this repository for?
+---
 
-- Quick summary
-- Version
-- [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+### Features
 
-### How do I get set up?
+* Admin and vendor user base with authentication and login
+* Browse properties for sale or rent
+* Post new property listings
+* Search properties by location, price, and type
+* Contact property owners directly via Nodemailer email integration
 
-- Summary of set up
-- Configuration
-- Dependencies
-- Database configuration
-- How to run tests
-- Deployment instructions
+---
 
-### Contribution guidelines
+### Setup
 
-- Writing tests
-- Code review
-- Other guidelines
+```bash
+git clone https://github.com/ARJUN-ANIL-5314/Nestora.git
+npm install
+npm start
+```
 
-### Who do I talk to?
-
-- Repo owner or admin
-- Other community or team contact
